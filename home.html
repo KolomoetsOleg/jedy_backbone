@@ -6,37 +6,24 @@
     <script type="application/javascript" src="js/jquery-2.1.4.js"></script>
     <script type="application/javascript" src="js/underscore.js"></script>
     <script type="application/javascript" src="js/backbone.js"></script>
-    <script type="application/javascript" src="js/location_view.js"></script>
+    <script type="application/javascript" src="js/jedi.js"></script>
+    <script type="application/javascript" src="js/models/jediModel.js"></script>
+    <script type="application/javascript" src="js/models/locationModel.js"></script>
+    <script type="application/javascript" src="js/views/locationView.js"></script>
+    <script type="application/javascript" src="js/views/jediView.js"></script>
+
+    <link  href="css/main.css" media="all" rel="stylesheet">
 </head>
 <body>
 <div class="app-container">
     <div class="css-root">
-        <h1 class="css-planet-monitor">Obi-Wan currently on Tatooine</h1>
+        <div id="planet_monitor" ></div>
 
-        <section class="css-scrollable-list">
+
+        <section class="css-scrollable-list" id="jedi_list">
             <ul class="css-slots">
-                <li class="css-slot">
-                    <h3>Jorak Uln</h3>
-                    <h6>Homeworld: Korriban</h6>
-                </li>
-                <li class="css-slot">
-                    <h3>Skere Kaan</h3>
-                    <h6>Homeworld: Coruscant</h6>
-                </li>
-                <li class="css-slot">
-                    <h3>Na'daz</h3>
-                    <h6>Homeworld: Ryloth</h6>
-                </li>
-                <li class="css-slot">
-                    <h3>Kas'im</h3>
-                    <h6>Homeworld: Nal Hutta</h6>
-                </li>
-                <li class="css-slot">
-                    <h3>Darth Bane</h3>
-                    <h6>Homeworld: Apatros</h6>
-                </li>
-            </ul>
 
+            </ul>
             <div class="css-scroll-buttons">
                 <button class="css-button-up"></button>
                 <button class="css-button-down"></button>
@@ -44,5 +31,16 @@
         </section>
     </div>
 </div>
+
+<script type="text/template" id="planet">
+    <h1 class="css-planet-monitor">Obi-Wan currently on <%= name %></h1>
+</script>
+
+<script type="text/template" id="jedi">
+    <li class="css-slot">
+        <h3><%= name %></h3>
+        <h6>Homeworld: <%= home_world %></h6>
+    </li>
+</script>
 </body>
 </html>
