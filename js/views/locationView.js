@@ -2,6 +2,8 @@
 var LocationView = Backbone.View.extend({
 
     el: "#planet_monitor",
+    model: new Location,
+
     initialize:  function(){
         this.initSocket();
         this.template = _.template($('#planet').html());
