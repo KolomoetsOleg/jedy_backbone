@@ -1,6 +1,6 @@
 var JediView = Backbone.View.extend({
-  tagName: 'li',
-
+  el: 'ul.css-slots',
+  model: new JediModel,
   events: {
     'click .css-button-up': 'ScrollUp',
     'click .css-button-down': 'ScrollDown'
@@ -11,5 +11,14 @@ var JediView = Backbone.View.extend({
     this.listenTo(this.model,'change', this.render);
   },
 
-  render: function(){}
+  render: function() {
+    console.log("In render")
+    //this.collection.each(function(jedi) {
+      var view = this.template(this.model.toJSON);
+      this.$el.append(view);
+    //}, this);
+
+    return this;
+  }
+
 });
